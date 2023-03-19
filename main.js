@@ -23,4 +23,8 @@ for (const colorButton of colorButtons) {
   });
 }
 
-
+for (const cell of cells) {
+  cell.addEventListener("click", (event) => {
+    event.target.style.background = currentColor.style.background;
+  });
+}
