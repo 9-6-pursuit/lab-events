@@ -4,6 +4,8 @@ html,
 body {
   margin: 0;
   padding: 0;
+  text-align: center;
+  align-items: center;
 }
 
 h1,
@@ -66,4 +68,17 @@ header h1 {
   margin: 10px;
   height: 50px;
   width: 50px;
+}
+
+#clear-button {
+  background-color: antiquewhite;
+  border: 4px solid #393e41;
+  border-radius: 7px;
+  display: flex;
+  height: 50px;
+  margin: auto;
+  width: 10%;
+  vertical-align: middle;
+  align-items: center;
+  text-align: center;
 }
