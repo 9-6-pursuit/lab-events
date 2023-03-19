@@ -20,11 +20,35 @@ colors.forEach((color) => {
 })
 //When you click on a .cell, its background should change to match the background of #current-color
     let cells = document.querySelectorAll(".cell")
-    //console.log(cell)
+    //console.log(cells)
     cells.forEach((cell) => {
-      cell.addEventListener("click", () => {
+      //console.log(cell)
+      cell.addEventListener("mousedown", () => {
       cell.style.background = currColor.style.background
     })
   })
-//COLORS USES EVENT AS PARAM CELLS DOES NOT BUT BOTH FUNCTION
+//COLORS USES EVENT AS A PARAM; CELLS DOES NOT BUT BOTH LISTENERS WORK
+
+//Create a button that, when clicked, resets all cells so that they all have a background of white
+const resetButton = document.createElement("div")
+resetButton.textContent = "reset 🔁"
+document.querySelector("#canvas").append(resetButton)
+resetButton.addEventListener("click", () => {
+  cells.forEach((cell) => (cell.style.background = "none"))
+});
+//Create a button that, when clicked, changes all of the cells so that they match the #current-color element's background
+const anotherButton = document.createElement("div");
+anotherButton.textContent = `change 🖌️ `;
+document.querySelector("#canvas").append(anotherButton);
+anotherButton.addEventListener("click", () => {
+  cells.forEach((cell) => (cell.style.background = currColor.style.background));
+});
+//Create a button with a new color
+const addColor = document.createElement('div');
+addColor.setAttribute("class", "color")
+addColor.style.background = 'lightblue';
+//console.log(addColor.style.background)
+document.querySelector('#palette').append(addColor);
+
+
 
