@@ -9,6 +9,9 @@ for (let i = 0; i < 100; i++) {
 // You may write your code here!
 let colorButtons = document.querySelectorAll(".color")
 let currentColorSquare = document.querySelector("#current-color")
+let blankCells = document.querySelectorAll(".cell")
+
+
          // ONE COLOR SELECTED
 // colorButtons[0].addEventListener("click", (event) => {
 //     // console.log(event.target.style.background)
@@ -21,19 +24,21 @@ let currentColorSquare = document.querySelector("#current-color")
 //   colorButton.addEventListener("click", (event) => {
 //   currentColorSquare.style.background = event.target.style.background
 //   })} 
+
   colorButtons.forEach(colorButton =>
     colorButton.addEventListener("click", (event) => {
     currentColorSquare.style.background = event.target.style.background
   })) //
 
-let blankCells = document.querySelector(".cell")
+// LOOPING THROUGH EACH EMPTY CELL AND ASSIGNING EVENT TO CELL
+// for (const colorCell of blankCells){
+//   colorCell.addEventListener("click", (event) => {
+//     event.target.style.background = currentColorSquare.style.background
+//   })
+// }
 
-for (const colorCell of blankCells){
+blankCells.forEach(colorCell => {
     colorCell.addEventListener("click", (event) => {
-      colorCell.style.background = currentColorSquare.style.background
-})}
-
-// blankCells.forEach(colorCell => {
-//     colorCell.addEventListener("mouseenter", (event) => {
-//       colorCell.style.background = currentColorSquare.style.background
-//   })}) //
+      event.target.style.background = currentColorSquare.style.background
+  })
+}) 
