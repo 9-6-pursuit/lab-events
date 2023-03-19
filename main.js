@@ -9,12 +9,12 @@ for (let i = 0; i < 100; i++) {
 // You may write your code here!
 
 let colorButtons = document.querySelectorAll(".color");
-console.log(colorButtons);
 
 let currentColor = document.querySelector("#current-color");
-console.log(currentColor);
 
 let cells = document.querySelectorAll(".cell");
+
+let clearButton = document.querySelector("#clear-button");
 
 for (const colorButton of colorButtons) {
   colorButton.addEventListener("click", (event) => {
@@ -28,3 +28,9 @@ for (const cell of cells) {
     event.target.style.background = currentColor.style.background;
   });
 }
+
+clearButton.addEventListener("click", () => {
+  for (const cell of cells) {
+    cell.style.background = "white";
+  }
+});
