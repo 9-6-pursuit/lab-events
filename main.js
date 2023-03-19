@@ -7,3 +7,20 @@ for (let i = 0; i < 100; i++) {
 }
 
 // You may write your code here!
+let colorButtons = document.querySelectorAll(".color")
+let currentColorSquare = document.querySelector("#current-color")
+
+
+for (const colorButton of colorButtons) {
+  colorButton.addEventListener("click", (event) => {
+    currentColorSquare.style.background = event.target.style.background
+  })
+}
+
+let cells = document.querySelectorAll(".cell");
+
+for (const cell of cells) {
+  cell.addEventListener("click", () => {
+    cell.style.background = currentColorSquare.style.background;
+  });
+}
