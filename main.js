@@ -7,3 +7,21 @@ for (let i = 0; i < 100; i++) {
 }
 
 // You may write your code here!
+var select = document.getElementsByClassName("color");
+var current = document.getElementById("current-color");
+var color;
+for (const iterator of select) {
+  iterator.addEventListener('click',
+  function(){
+    color = this.getAttribute("style");
+    current.setAttribute("style",color)
+  });
+}
+
+var selectcell = document.getElementsByClassName("cell");
+for (const iterator of selectcell) {
+  iterator.addEventListener('click',
+  function(){
+    iterator.setAttribute("style",color)
+  });
+}
