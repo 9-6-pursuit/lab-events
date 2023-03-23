@@ -7,3 +7,19 @@ for (let i = 0; i < 100; i++) {
 }
 
 // You may write your code here!
+let colorButtons = document.querySelectorAll(".color")
+console.log(colorButtons)
+let currentColor = document.querySelector("#current-color")
+let gridCells = document.querySelectorAll(".cell")
+
+colorButtons.forEach(color => {
+  color.addEventListener("click", (event) => {
+    currentColor.style.background = event.target.style.background
+  })
+})
+
+gridCells.forEach(cell => {
+  cell.addEventListener("click", (event) => {
+     cell.style.background = currentColor.style.background
+  })
+})
